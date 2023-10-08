@@ -1,0 +1,270 @@
+body {
+  font-family: 'Amaranth';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(3, 45, 134);
+  margin-bottom: 20px;
+
+}
+
+h1 {
+  font-size: 2rem;
+  font-family:  'Amaranth';
+  color: white;
+}
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-top:30px;
+  color: white;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  font-size: 0.9rem;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;;
+  background-color: rgb(3, 45, 134);
+  border: 2px solid rgba(142, 142, 143, 0.888);;
+
+}
+
+.curr-weather{
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-top:25px;
+  max-height: 10%;
+  width: 70%;
+  background-color: rgba(134, 136, 140, 0.153);
+  color: white;
+}
+.curr-weather > h2{
+  margin-top: 25px;
+}
+
+.weat-description{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  border-radius: 10px;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.weat-description > img{
+  width: 100px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.todays-weather{
+  background-color: rgba(134, 136, 140, 0.153);
+  color: white;
+  border-radius: 10px;
+  width: 70%;
+  margin-top:25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.todays-weather > h2{
+  margin-top:25px;
+
+}
+
+.todays-tab{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 70%;
+  margin-top:15px;
+  margin-bottom:25px;
+
+}
+
+.todays-tab > h3{
+  font-size: 1.5rem;
+}
+.todays-tab > h2{
+  font-size: 1.5rem;
+}
+
+.todays-weather > img{
+  width: 80px;
+  right: 0;
+  bottom: 0;
+}
+
+.dec-today{
+margin-bottom: -5px;;
+}
+.feels-tab{
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+.details-weat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.weather-tab{
+  background-color: rgba(134, 136, 140, 0.153);
+  border-radius: 10px;
+  width: 70%;
+  margin-top:25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.tab-weather{
+  display: grid;
+  grid-template-columns:2fr 1fr  ;
+  grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 70%;
+}
+
+.details-weat > .tab-weather > h3{
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.sec-col{
+  margin-left: 7cqmax;;
+}
+
+.tommorrow-weather{
+  border-radius: 10px;
+  width: 70%;
+  margin-top:25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(134, 136, 140, 0.153);
+  color: white;
+}
+
+.tommorrow-weather > h2{
+  margin-top:25px;
+}
+
+@media (max-width: 670px) {
+  body {
+    font-size: 0.8rem;
+  }
+  
+  h2, h3 ,h1{
+    font-size: 1rem;
+  }
+  input {
+    font-size: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .curr-weather{
+    margin-top:10px;
+    max-height: 5%;
+    width: 90%;
+    font-size: 0.5rem;
+
+  }
+  .curr-weather > h2{
+    margin-top: 10px;
+  }
+  
+  .weat-description{
+    border-radius: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    font-size: 0.5rem;
+
+  }
+  
+  .weat-description > img{
+    width: 60px;
+    font-size: 0.5rem;
+
+  }
+  
+  .todays-weather{
+    border-radius: 10px;
+    width: 90%;
+    margin-top:10px;
+    font-size: 0.5rem;
+  }
+  
+
+  
+  .todays-tab{
+    width: 90%;
+    font-size: 0.5rem;
+
+  }
+  
+  .todays-tab > h3{
+    font-size: 1rem;
+  }
+  .todays-tab > h2{
+    font-size: 1rem;
+  }
+  
+  .todays-weather > img{
+    width: 60px;
+  }
+  
+  .feels-tab{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .weather-tab{
+
+    width: 90%;
+  }
+  
+  .tab-weather{
+   
+    width: 90%;
+  }
+  
+  .details-weat > .tab-weather > h3{
+    font-size: 1rem;
+  }
+  
+  
+  .tommorrow-weather{
+    width: 90%;
+  }
+  
+}

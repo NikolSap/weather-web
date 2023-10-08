@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weather Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Bree+Serif&family=Edu+SA+Beginner&family=News+Cycle&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+
+</head>
+
+<body>
+    <form action="/" method="POST">
+      <input type="text" id="area" name="area" placeholder="City/Town" />
+      <input type="submit" value="Search">
+    </form>
+
+  <% if (locals.area) { %>
+    <div class="curr-weather">
+      <h2> <%= area  %> Weather Forecast</h2>
+      <h3> <%= dateStr %></h3>
+      <div class="weat-description">
+        <div class="curr-temp">
+          <% const curretnTemp = data.main.temp - 273.15;%>
+          <h1><%=  (Math.round(curretnTemp * 100) / 100).toFixed(2);%>°</h1>
+        </div>
+        <img src=<%= icon %> alt="Weather Icon">
+        <h3><%= data.weather[0].description %></h3>
+      </div>
+      <% const morning = Math.round(((Days5Data.list[0].main.temp - 273.15)*100)/100).toFixed(2);
+      const afternoon =Math.round(((Days5Data.list[1].main.temp - 273.15)*100)/100).toFixed(2);
+      const evenning = Math.round(((Days5Data.list[2].main.temp - 273.15)*100)/100).toFixed(2);
+      const overnight = Math.round(((Days5Data.list[3].main.temp - 273.15)*100)/100).toFixed(2);
+       %>
+      <div class="todays-tab">
+        <h3>Morning</h3>
+        <h3>Evenning</h3>
+        <h3 >Overnight</h3>
+        <h3>Afternoon</h3>
+        <h2><%=morning%>°</h2>
+        <h2><%=afternoon%>°</h2>
+        <h2><%=evenning%>°</h2>
+        <h2><%=overnight%>°</h2>
+        <% const weatherIcon1 = `https://openweathermap.org/img/wn/${Days5Data.list[0].weather[0].icon}.png`;%>
+        <img src=<%= weatherIcon1 %> alt="Weather Icon">
+        <% const weatherIcon2 = `https://openweathermap.org/img/wn/${Days5Data.list[1].weather[0].icon}.png`;%>
+        <img src=<%= weatherIcon2 %> alt="Weather Icon">
+        <% const weatherIcon3 = `https://openweathermap.org/img/wn/${Days5Data.list[2].weather[0].icon}.png`;%>
+        <img src=<%= weatherIcon3 %> alt="Weather Icon">
+        <% const weatherIcon4 = `https://openweathermap.org/img/wn/${Days5Data.list[3].weather[0].icon}.png`;%>
+        <img src=<%= weatherIcon4 %> alt="Weather Icon">
+    </div>
+    </div>
+
+    <div class="todays-weather">
+      <h2 class="dec-today">Weather Today in <%= area %> </h2>
+    <% const feelsLikeTemp = Math.round(((data.main.feels_like - 273.15)*100)/100).toFixed(2);%>
+    <h2 class="feels-tab"> Feels like <%= feelsLikeTemp %>°</h2>
+    <% const highTemp = Math.round(((data.main.temp_max - 273.15)*100)/100).toFixed(2);%>
+    <% const lowTemp = Math.round(((data.main.temp_min - 273.15)*100)/100).toFixed(2);%>
+
+    <div class="details-weat">
+      <div class="tab-weather">
+          <h3>High/Low</h3>
+          <h3 class="sec-col"><%=highTemp%>°/<%=lowTemp%>°</h3>
+
+          <h3>Wind</h3>
+          <h3 class="sec-col"><%=data.wind.speed%>m/s</h3>
+  
+        <h3>Humidity</h3>
+        <h3 class="sec-col"><%=data.main.humidity%>%</h3>
+
+        <h3>Pressure</h3>
+        <h3 class="sec-col"><%=data.main.pressure%>hPa</h3>
+
+        <% const sunriseTime = new Date(data.sys.sunrise * 1000); // Multiply by 1000 to convert to milliseconds
+        const sunsetTime = new Date(data.sys.sunset * 1000); // Multiply by 1000 to convert to milliseconds
+        
+        const sunriseFormatted = sunriseTime.toLocaleTimeString(); // Format sunrise time
+        const sunsetFormatted = sunsetTime.toLocaleTimeString();  %>
+       
+        <h3>Sunrise Time</h3>
+        <h3 class="sec-col"><%=sunriseFormatted%></h3>
+
+        <h3>sunset Time</h3>
+        <h3 class="sec-col"><%=sunsetFormatted%></h3>
+      </div>
+    </div>
+    </div>
+    
+    <% const morning2 = Math.round(((Days5Data.list[4].main.temp - 273.15)*100)/100).toFixed(2);
+    const afternoon2 =Math.round(((Days5Data.list[5].main.temp - 273.15)*100)/100).toFixed(2);
+    const evenning2 = Math.round(((Days5Data.list[6].main.temp - 273.15)*100)/100).toFixed(2);
+    const overnight2 = Math.round(((Days5Data.list[7].main.temp - 273.15)*100)/100).toFixed(2);
+     %>
+     <div class="tommorrow-weather">
+      <h2>Tommorrow's Forecast for <%= area %> </h2>
+      <div class="todays-tab">
+          <h3>Morning</h3>
+          <h3>Evenning</h3>
+          <h3 >Overnight</h3>
+          <h3>Afternoon</h3>
+          <h2><%=morning2%>°</h2>
+          <h2><%=afternoon2%>°</h2>
+          <h2><%=evenning2%>°</h2>
+          <h2><%=overnight2%>°</h2>
+          <% const weatherIcon5 = `https://openweathermap.org/img/wn/${Days5Data.list[4].weather[0].icon}.png`;%>
+          <img src=<%= weatherIcon5 %> alt="Weather Icon">
+          <% const weatherIcon6 = `https://openweathermap.org/img/wn/${Days5Data.list[5].weather[0].icon}.png`;%>
+          <img src=<%= weatherIcon6 %> alt="Weather Icon">
+          <% const weatherIcon7 = `https://openweathermap.org/img/wn/${Days5Data.list[5].weather[0].icon}.png`;%>
+          <img src=<%= weatherIcon7 %> alt="Weather Icon">
+          <% const weatherIcon8 = `https://openweathermap.org/img/wn/${Days5Data.list[6].weather[0].icon}.png`;%>
+          <img src=<%= weatherIcon8 %> alt="Weather Icon">
+      </div>
+    </div>
+  
+  <% 
+} 
+  else {%>
+    <h1>Please enter city/town in order to get weater Forecast.</h1>
+
+    <% } %>
+
+
+</body>
+
+
+</html>
