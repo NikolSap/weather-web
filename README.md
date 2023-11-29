@@ -14,12 +14,18 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
    git clone https://github.com/your-username/weather-web.git
    
 2. Navigate to the project directory:
+
+     ```bash
     cd weather-web
 
 3.Install dependencies:
+
+  ```bash
    npm install
 
 4.To start the app, run the following command in your terminal:
+
+  ```bash
    node index.js
    
 Visit http://localhost:3000 in your web browser to view the weather information.
