@@ -20,12 +20,10 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
 
 3.Install dependencies:
    
-     ```bash
       npm install
    
 4.To start the app, run the following command in your terminal:
    
-     ```bash
    node index.js
    
 Visit http://localhost:3000 in your web browser to view the weather information.
