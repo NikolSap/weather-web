@@ -24,14 +24,3 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
    
 Visit http://localhost:3000 in your web browser to view the weather information.
 
-
-
-
-
-
-
-
-
-
-
-    node index.js
