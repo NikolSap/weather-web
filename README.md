@@ -12,7 +12,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
 
    ```bash
    git clone https://github.com/your-username/weather-web.git
-    
+   
 2. Navigate to the project directory:
     cd weather-web
 
