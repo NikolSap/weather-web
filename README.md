@@ -9,15 +9,15 @@ Weather-Web is a web application that provides current weather information, incl
 Make sure you have [Node.js](https://nodejs.org/) installed.
 
 1. Clone the repository:
-2. 
+2.
 ```
-   git clone https://github.com/your-username/weather-web.git
+  git clone https://github.com/your-username/weather-web.git
 ```
-
+ 
 2. Navigate to the project directory:
-
 ```
     cd weather-web
+```
 
 3.Install dependencies:
 
